@@ -26,8 +26,9 @@ export class GitHubAPI {
                 fetch(`${this.baseURL}/users/${this.username}/followers?per_page=5`).then(r => r.json())
             ]);
 
-            // Fetch languages for all repos in parallel
-            const langPromises = repos.map(repo =>
+            // Fetch languages for a subset of repos to reduce network load
+            const reposForLangs = repos.slice(0, 3);
+            const langPromises = reposForLangs.map(repo =>
                 fetch(repo.languages_url).then(r => r.json())
             );
             const langData = await Promise.all(langPromises);
@@ -38,7 +39,7 @@ export class GitHubAPI {
 
             langData.forEach((repoLangs, index) => {
                 // Attach to repo object for Task 3
-                repos[index].languages = repoLangs;
+                reposForLangs[index].languages = repoLangs;
 
                 for (const [lang, bytes] of Object.entries(repoLangs)) {
                     if (totalStats[lang] !== undefined) {

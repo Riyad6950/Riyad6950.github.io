@@ -13,7 +13,7 @@ import { InteractionSystem } from './interactions.js';
 
 console.log('🚀 Loading Modular Systems...');
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Basic Systems
     try { new ProjectManager(); } catch (e) { console.error(e); }
     try { new LanguageSystem(); } catch (e) { console.error(e); }
@@ -22,34 +22,58 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Phase 1: Premium Cursor
     // try { new CursorSystem(); } catch (e) { console.error(e); }
 
-    // Phase 2: GitHub Integration
+    // Phase 2: GitHub Integration (deferred until section is visible)
     try {
-        const gh = new GitHubAPI();
-        const data = await gh.getData();
-        if (data) {
-            injectGitHubStyles();
-            const root = document.getElementById('github-root');
-            root.innerHTML = `
-                <div class="gh-dashboard-grid">
-                    <div class="gh-left-col">
-                        ${new GitHubProfile(data.profile).render()}
-                        ${renderTechUsage(data.langStats, data.repos.length)}
-                        ${renderFollowers(data.followers)}
-                    </div>
-                    <div class="gh-right-col">
-                        ${new ActivityFeed(data.activity).render()}
-                        ${new RepoGrid(data.repos).render()}
-                    </div>
-                </div>
-            `;
-            // Add tech badges to existing projects as well
-            injectTechBadges();
+        const root = document.getElementById('github-root');
+        if (root) {
+            if (!('IntersectionObserver' in window)) {
+                loadGitHubData(root);
+            } else {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(async entry => {
+                        if (!entry.isIntersecting) return;
+                        obs.disconnect();
+                        await loadGitHubData(root);
+                    });
+                }, { rootMargin: '200px' });
+                observer.observe(root);
+            }
         }
     } catch (e) { console.error(e); }
 
     // Phase 3: Interactions
     try { new InteractionSystem(); } catch (e) { console.error(e); }
 });
+
+async function loadGitHubData(root) {
+    try {
+        const gh = new GitHubAPI();
+        const data = await gh.getData();
+        if (!data) {
+            root.innerHTML = '<div class="gh-loader">Unable to load GitHub data right now.</div>';
+            return;
+        }
+        injectGitHubStyles();
+        root.innerHTML = `
+            <div class="gh-dashboard-grid">
+                <div class="gh-left-col">
+                    ${new GitHubProfile(data.profile).render()}
+                    ${renderTechUsage(data.langStats, data.repos.length)}
+                    ${renderFollowers(data.followers)}
+                </div>
+                <div class="gh-right-col">
+                    ${new ActivityFeed(data.activity).render()}
+                    ${new RepoGrid(data.repos).render()}
+                </div>
+            </div>
+        `;
+        // Add tech badges to existing projects as well
+        injectTechBadges();
+    } catch (error) {
+        console.error(error);
+        root.innerHTML = '<div class="gh-loader">Unable to load GitHub data right now.</div>';
+    }
+}
 
 function injectGitHubStyles() {
     const style = document.createElement('style');
