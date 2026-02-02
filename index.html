@@ -1,12 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title Here</title>
+    <meta charset="UTF-8" />
+    <title>10VIR | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tanvir Islam Riyad - Frontend Developer, Creative Coder, IT Student Portfolio" />
+
+    <!-- Preconnect to critical domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://api.github.com" />
+
+    <!-- Fonts: Modern Sans-Serif for Premium Feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="Img/1770040975029.png" />
 </head>
+
 <body>
-    <img src="Img/1769639836524.jpg" alt="Tanvir Islam Riyad" class="profile-image" loading="lazy"
-        width="320" height="320" />
+    <!-- ================= HEADER ====================== -->
+    <header id="top">
+        <div class="header-inner">
+            <div class="header-logo-text">
+                <img src="Img/dark-light.png" alt="Logo" class="logo-image" loading="lazy" />
+                <a href="#" class="logo">10VIR<span class="dot">.</span></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="dark-mode-toggle">
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                AVAILABLE FOR WORK
+            </div>
+            <h1>Tanvir Islam<br />Riyad</h1>
+            <p class="hero-subtitle">
+                Frontend Developer | Creative Coder | IT Student
+            </p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-primary">Explore Portfolio <i class="fas fa-arrow-down"></i></a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="blob-static"></div>
+            <div class="orbit-track">
+                <div class="orbit-dot"></div>
+            </div>
+            <div class="abstract-shape">
+                <img src="Img/1769639836524.jpg" alt="Tanvir Islam Riyad" class="profile-image" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MAIN CONTAINER ================= -->
+    <main class="world">
+        <!-- ================= ABOUT ME ================= -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header-split">
+                    <div class="header-left">
+                        <span class="label">INTRODUCTION</span>
+                        <h2>About Me</h2>
+                    </div>
+                    <div class="header-right">
+                        <p>
+                            Hello! My name is Riyad. I am an IT student and aspiring
+                            programmer who loves building creative web experiences. I enjoy
+                            mixing design with functionality and turning simple ideas into
+                            interactive digital worlds.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-cards">
+                    <article class="info-card">
+                        <span class="card-label">FOCUS</span>
+                        <h3>Frontend Development</h3>
+                        <p>
+                            Working with HTML, CSS, and JavaScript to create beautiful,
+                            functional interfaces.
+                        </p>
+                    </article>
+                    <article class="info-card accent">
+                        <span class="card-label">GOAL</span>
+                        <h3>Professional Developer</h3>
+                        <p>
+                            Building applications that solve real-world problems and deliver
+                            great user experiences.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="label">EXPERTISE</span>
+                    <h2>Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <h3>HTML 5</h3>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS 3</h3>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                        <h3>Git</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="label">PORTFOLIO</span>
+                    <h2>Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <a href="https://github.com/Riyad6950/Password-Generator" target="_blank" class="project-card">
+                        <div class="project-number">01</div>
+                        <h3>Random Password Generator</h3>
+                        <p>
+                            A secure password generator built with JavaScript. Users can
+                            generate strong passwords with custom length and character
+                            options.
+                        </p>
+                        <span class="project-link-text">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="https://github.com/Riyad6950/Calculator" target="_blank" class="project-card">
+                        <div class="project-number">02</div>
+                        <h3>Calculator App</h3>
+                        <p>
+                            A fully functional calculator built using HTML, CSS, and
+                            JavaScript with custom UI.
+                        </p>
+                        <span class="project-link-text">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="https://github.com/Riyad6950/My-Portfolio" target="_blank" class="project-card">
+                        <div class="project-number">03</div>
+                        <h3>Personal Portfolio</h3>
+                        <p>
+                            A creative portfolio website designed with modern inspiration
+                            and smooth scrolling navigation.
+                        </p>
+                        <span class="project-link-text">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ================= GITHUB DASHBOARD ================= -->
+        <section id="github-dashboard" class="section github-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="label">OPEN SOURCE</span>
+                    <h2>GitHub Activity</h2>
+                </div>
+                <div id="github-root">
+                    <div class="gh-loader">Loading GitHub Data...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="label">BACKGROUND</span>
+                    <h2>Education</h2>
+                </div>
+                <div class="education-grid">
+                    <article class="education-card">
+                        <span class="edu-year">2024-2025</span>
+                        <h3>SSC Graduate</h3>
+                        <p>Sherpur Govt. Victoria Academy</p>
+                        <span class="edu-badge">GPA 5.0</span>
+                        <div class="edu-links">
+                            <a href="https://www.facebook.com/sherpurzillaschool/" target="_blank"
+                                aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://en.wikipedia.org/wiki/Sherpur_Government_Victoria_Academy" target="_blank"
+                                aria-label="Wikipedia">
+                                <i class="fab fa-wikipedia-w"></i>
+                            </a>
+                            <a href="https://maps.app.goo.gl/ShbbjQG4xGu56uWF6" target="_blank"
+                                aria-label="Google Maps">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="education-card">
+                        <span class="edu-year">ONGOING</span>
+                        <h3>Diploma in IT</h3>
+                        <p>University of Cyberjaya, Malaysia</p>
+                        <span class="edu-badge">In Progress</span>
+                        <div class="edu-links">
+                            <a href="https://cyberjaya.edu.my/" target="_blank" aria-label="Website">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                            <a href="https://www.facebook.com/UniCyberjaya/" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://maps.app.goo.gl/BhrYbeReT5PnD4zr7" target="_blank"
+                                aria-label="Google Maps">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-card">
+                    <span class="label">GET IN TOUCH</span>
+                    <h2>Contact Me</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">10VIR<span class="dot">.</span></a>
+                    <p>Frontend Developer & Creative Coder</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Thetanvir999" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/10vir69" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/riyad200" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/10virr" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Riyad | Personal Portfolio</p>
+                <a href="#top" class="back-top"><i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script type="module" src="modules/init.js"></script>
 </body>
+
 </html>
