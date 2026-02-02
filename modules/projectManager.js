@@ -78,6 +78,7 @@ export class ProjectManager {
             }
             .pm-filters {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 10px;
             }
             .pm-btn {
@@ -92,6 +93,7 @@ export class ProjectManager {
                 font-size: 0.85rem;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+                white-space: nowrap;
             }
             .pm-btn.active {
                 background: var(--bg-dark);
@@ -157,6 +159,25 @@ export class ProjectManager {
                 .pm-controls {
                     flex-direction: column;
                     align-items: stretch;
+                    padding: 16px;
+                    gap: 12px;
+                }
+                .pm-search-group {
+                    min-width: 0;
+                    width: 100%;
+                }
+                .pm-filters {
+                    justify-content: flex-start;
+                    gap: 8px;
+                }
+                .pm-btn {
+                    flex: 1 1 auto;
+                    text-align: center;
+                    padding: 8px 12px;
+                    font-size: 0.75rem;
+                }
+                .pm-select {
+                    width: 100%;
                 }
             }
         `;

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try { new AIChat(); } catch (e) { console.error(e); }
 
     // Phase 1: Premium Cursor
-    try { new CursorSystem(); } catch (e) { console.error(e); }
+    // try { new CursorSystem(); } catch (e) { console.error(e); }
 
     // Phase 2: GitHub Integration
     try {
