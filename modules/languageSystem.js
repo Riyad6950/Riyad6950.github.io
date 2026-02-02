@@ -18,7 +18,8 @@ export class LanguageSystem {
             { code: 'id', name: 'Bahasa', flag: '🇮🇩' },
             { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
             { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-            { code: 'it', name: 'Italiano', flag: '🇮🇹' }
+            { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+            { code: 'ne', name: 'नेपाली', flag: '🇳🇵' }
         ];
 
         // Mapping selectors to translation keys
