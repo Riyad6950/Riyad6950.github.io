@@ -42,29 +42,81 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ================= PERFORMANCE UTILITIES =================
+const debounce = (fn, delay) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn.apply(null, args), delay);
+    };
+};
+
+const throttle = (fn, limit) => {
+    let inThrottle;
+    return (...args) => {
+        if (!inThrottle) {
+            fn.apply(null, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+};
+
 // ================= NAVIGATION HIGHLIGHT =================
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('.main-nav a');
+let sectionOffsets = [];
+
+function updateSectionOffsets() {
+    sectionOffsets = Array.from(sections).map(section => ({
+        id: section.getAttribute('id'),
+        top: section.offsetTop - 200
+    }));
+}
 
 function highlightNavLink() {
+    const scrollPos = globalThis.pageYOffset;
     let current = '';
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (globalThis.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
+    for (const section of sectionOffsets) {
+        if (scrollPos >= section.top) {
+            current = section.id;
+        } else {
+            break;
         }
-    });
+    }
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 }
 
-globalThis.addEventListener('scroll', highlightNavLink);
+// ================= HEADER SCROLL =================
+const headerEl = document.querySelector('header');
+function updateHeader() {
+    if (globalThis.pageYOffset > 50) {
+        headerEl.classList.add('scrolled');
+    } else {
+        headerEl.classList.remove('scrolled');
+    }
+}
+
+// Optimized Scroll Manager
+let isTicking = false;
+globalThis.addEventListener('scroll', () => {
+    if (!isTicking) {
+        globalThis.requestAnimationFrame(() => {
+            highlightNavLink();
+            updateHeader();
+            isTicking = false;
+        });
+        isTicking = true;
+    }
+}, { passive: true });
+
+// Initial calculations
+updateSectionOffsets();
+globalThis.addEventListener('resize', debounce(updateSectionOffsets, 200), { passive: true });
 
 // ================= MOBILE MENU TOGGLE =================
 const menuToggle = document.querySelector('.menu-toggle');
@@ -75,10 +127,9 @@ if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         mainNav.classList.toggle('active');
-        body.classList.toggle('no-scroll'); // Optional: Prevent scrolling when menu is open
+        body.classList.toggle('no-scroll');
     });
 
-    // Close menu when clicking a link
     navLinksItems.forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
@@ -87,7 +138,6 @@ if (menuToggle && mainNav) {
         });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
             menuToggle.classList.remove('active');
@@ -119,58 +169,34 @@ if (contactForm) {
             return;
         }
 
-        // Formspree AJAX Submission
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerHTML;
-
-        // Check for default/placeholder ID
         const formAction = 'https://formspree.io/f/xpwzqzqz';
-        if (formAction.includes('xpwzqzqz')) {
-            console.warn('⚠️ Contact Form Warning: You are using the default placeholder ID (xpwzqzqz). Calls will fail with "Form not found". Please replace it with your own from formspree.io.');
-        }
 
-        // 1. Show Loading State
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         showNotification('Sending message...', 'success');
 
-        // 2. Prepare Data
         const formData = new FormData();
         formData.append('name', name);
         formData.append('email', email);
         formData.append('message', message);
         formData.append('_subject', `Portfolio Message from ${name}`);
 
-        // 3. Send Request
         fetch(formAction, {
             method: 'POST',
             body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
         })
             .then(response => {
                 if (response.ok) {
                     showNotification('Message sent successfully!', 'success');
                     contactForm.reset();
                 } else {
-                    return response.json().then(data => {
-                        if (response.status === 404) {
-                            // Specific handling for "Form not found"
-                            showNotification('Config Error: Form ID invalid. DEV: Check console.', 'error');
-                            console.error('❌ Formspree Error: 404 Form not found. You most likely need to update the Formspree ID in app.js line 109.');
-                        } else if (Object.hasOwn(data, 'errors')) {
-                            showNotification(data.errors.map(error => error.message).join(", "), 'error');
-                        } else {
-                            showNotification('Oops! There was a problem sending your message.', 'error');
-                        }
-                    });
+                    showNotification('Oops! Problem sending message.', 'error');
                 }
             })
-            .catch(error => {
-                console.error('Error:', error);
-                showNotification('Network error. Please try again later.', 'error');
-            })
+            .catch(() => showNotification('Network error.', 'error'))
             .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
@@ -178,7 +204,7 @@ if (contactForm) {
     });
 }
 
-// ================= NOTIFICATION SYSTEM - STRICT HIGH CONTRAST =================
+// ================= NOTIFICATION SYSTEM =================
 function showNotification(message, type = 'success') {
     const existingNotif = document.querySelector('.notification');
     if (existingNotif) existingNotif.remove();
@@ -187,8 +213,6 @@ function showNotification(message, type = 'success') {
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
 
-
-    // Strict Rule: No RGB/HEX. Use Variables and Border/Scale only.
     notification.style.cssText = `
         position: fixed;
         top: 100px;
@@ -199,7 +223,6 @@ function showNotification(message, type = 'success') {
         border-radius: var(--radius-md);
         border: 4px solid ${type === 'success' ? 'var(--accent)' : 'var(--accent-highlight)'};
         font-family: var(--font-body);
-        font-size: 0.95rem;
         font-weight: 700;
         z-index: 10000;
         box-shadow: var(--shadow-hover);
@@ -213,16 +236,6 @@ function showNotification(message, type = 'success') {
         setTimeout(() => notification.remove(), 500);
     }, 4000);
 }
-
-// ================= HEADER SCROLL =================
-const headerEl = document.querySelector('header');
-globalThis.addEventListener('scroll', () => {
-    if (globalThis.pageYOffset > 50) {
-        headerEl.classList.add('scrolled');
-    } else {
-        headerEl.classList.remove('scrolled');
-    }
-});
 
 // ================= BACK TO TOP =================
 const backTopButton = document.querySelector('.back-top');
@@ -242,4 +255,5 @@ console.log(`
 ╚═══════════════════════════════════════╝
 `, 'color: var(--accent-highlight); font-family: monospace; font-size: 12px;');
 
-console.log('✅ Portfolio initialized with high-contrast system.');
+console.log('✅ Portfolio optimized and initialized.');
+
