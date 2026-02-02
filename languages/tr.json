@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "Hakkında",
+        "skills": "Yetenekler",
+        "projects": "Projeler",
+        "education": "Eğitim",
+        "contact": "İletişim"
+    },
+    "hero": {
+        "badge": "ÇALIŞMAYA MÜSAIT",
+        "title": "Tanvir Islam<br>Riyad",
+        "subtitle": "Frontend Geliştirici | Yaratıcı Kodlayıcı | BT Öğrencisi",
+        "btn_explore": "Portföyü Keşfet",
+        "btn_contact": "İletişime Geç"
+    },
+    "about": {
+        "label": "GİRİŞ",
+        "title": "Hakkımda",
+        "desc": "Merhaba! Adım Riyad. Yaratıcı web deneyimleri oluşturmayı seven bir BT öğrencisi ve tutkulu programcıyım. Tasarımı işlevsellikle harmanlayıp basit fikirleri interaktif dijital dünyalara dönüştürmeyi seviyorum.",
+        "card_focus": "Frontend Geliştirme",
+        "card_focus_desc": "HTML, CSS ve JavaScript ile güzel, işlevsel arayüzler oluşturma.",
+        "card_goal": "Profesyonel Geliştirici",
+        "card_goal_desc": "Gerçek dünya sorunlarını çözen ve harika kullanıcı deneyimleri sunan uygulamalar oluşturma."
+    },
+    "skills": {
+        "label": "UZMANLIK",
+        "title": "Yetenekler"
+    },
+    "projects": {
+        "label": "PORTFÖY",
+        "title": "Projeler",
+        "view_github": "GitHub'da Görüntüle"
+    },
+    "education": {
+        "label": "ARKA PLAN",
+        "title": "Eğitim",
+        "ssc": "SSC Mezunu",
+        "diploma": "BT Diploması",
+        "ongoing": "DEVAM EDİYOR"
+    },
+    "contact": {
+        "label": "İLETİŞİM",
+        "title": "Benimle İletişime Geç",
+        "btn_send": "Mesaj Gönder"
+    }
+}

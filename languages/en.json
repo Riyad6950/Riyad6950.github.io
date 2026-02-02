@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "AVAILABLE FOR WORK",
+    "title": "Tanvir Islam<br>Riyad",
+    "subtitle": "Frontend Developer | Creative Coder | IT Student",
+    "btn_explore": "Explore Portfolio",
+    "btn_contact": "Get in Touch"
+  },
+  "about": {
+    "label": "INTRODUCTION",
+    "title": "About Me",
+    "desc": "Hello! My name is Riyad. I am an IT student and aspiring programmer who loves building creative web experiences. I enjoy mixing design with functionality and turning simple ideas into interactive digital worlds.",
+    "card_focus": "Frontend Development",
+    "card_focus_desc": "Working with HTML, CSS, and JavaScript to create beautiful, functional interfaces.",
+    "card_goal": "Professional Developer",
+    "card_goal_desc": "Building applications that solve real-world problems and deliver great user experiences."
+  },
+  "skills": {
+    "label": "EXPERTISE",
+    "title": "Skills"
+  },
+  "projects": {
+    "label": "PORTFOLIO",
+    "title": "Projects",
+    "view_github": "View on GitHub"
+  },
+  "education": {
+    "label": "BACKGROUND",
+    "title": "Education",
+    "ssc": "SSC Graduate",
+    "diploma": "Diploma in IT",
+    "ongoing": "ONGOING"
+  },
+  "contact": {
+    "label": "GET IN TOUCH",
+    "title": "Contact Me",
+    "btn_send": "Send Message"
+  }
+}

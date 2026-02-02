@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "について",
+        "skills": "スキル",
+        "projects": "プロジェクト",
+        "education": "教育",
+        "contact": "お問い合わせ"
+    },
+    "hero": {
+        "badge": "仕事可能",
+        "title": "タンビル・イスラム<br>リヤド",
+        "subtitle": "フロントエンド開発者 | クリエイティブコーダー | IT学生",
+        "btn_explore": "ポートフォリオを見る",
+        "btn_contact": "お問い合わせ"
+    },
+    "about": {
+        "label": "紹介",
+        "title": "私について",
+        "desc": "こんにちは！私の名前はリヤドです。私はIT学生で、クリエイティブなウェブ体験を構築することが大好きな志望プログラマーです。デザインと機能性を組み合わせ、シンプルなアイデアをインタラクティブなデジタル世界に変えることを楽しんでいます。",
+        "card_focus": "フロントエンド開発",
+        "card_focus_desc": "HTML、CSS、JavaScriptを使用して、美しく機能的なインターフェースを作成します。",
+        "card_goal": "プロフェッショナル開発者",
+        "card_goal_desc": "実世界の問題を解決し、優れたユーザー体験を提供するアプリケーションを構築します。"
+    },
+    "skills": {
+        "label": "専門知識",
+        "title": "スキル"
+    },
+    "projects": {
+        "label": "ポートフォリオ",
+        "title": "プロジェクト",
+        "view_github": "GitHubで見る"
+    },
+    "education": {
+        "label": "背景",
+        "title": "教育",
+        "ssc": "SSC卒業",
+        "diploma": "ITディプロマ",
+        "ongoing": "進行中"
+    },
+    "contact": {
+        "label": "お問い合わせ",
+        "title": "お問い合わせ",
+        "btn_send": "メッセージを送る"
+    }
+}

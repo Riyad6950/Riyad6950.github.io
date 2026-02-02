@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "소개",
+        "skills": "기술",
+        "projects": "프로젝트",
+        "education": "교육",
+        "contact": "연락처"
+    },
+    "hero": {
+        "badge": "작업 가능",
+        "title": "탄비르 이슬람<br>리야드",
+        "subtitle": "프론트엔드 개발자 | 크리에이티브 코더 | IT 학생",
+        "btn_explore": "포트폴리오 탐색",
+        "btn_contact": "연락하기"
+    },
+    "about": {
+        "label": "소개",
+        "title": "나에 대해",
+        "desc": "안녕하세요! 제 이름은 리야드입니다. 저는 IT 학생이자 창의적인 웹 경험을 구축하는 것을 좋아하는 프로그래머 지망생입니다. 디자인과 기능을 혼합하고 간단한 아이디어를 상호 작용하는 디지털 세계로 바꾸는 것을 즐깁니다.",
+        "card_focus": "프론트엔드 개발",
+        "card_focus_desc": "HTML, CSS 및 JavaScript를 사용하여 아름답고 기능적인 인터페이스를 만듭니다.",
+        "card_goal": "전문 개발자",
+        "card_goal_desc": "실제 문제를 해결하고 훌륭한 사용자 경험을 제공하는 애플리케이션을 구축합니다."
+    },
+    "skills": {
+        "label": "전문성",
+        "title": "기술"
+    },
+    "projects": {
+        "label": "포트폴리오",
+        "title": "프로젝트",
+        "view_github": "GitHub에서 보기"
+    },
+    "education": {
+        "label": "배경",
+        "title": "교육",
+        "ssc": "SSC 졸업",
+        "diploma": "IT 디플로마",
+        "ongoing": "진행 중"
+    },
+    "contact": {
+        "label": "연락",
+        "title": "연락하기",
+        "btn_send": "메시지 보내기"
+    }
+}

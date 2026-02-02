@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "Über",
+        "skills": "Fähigkeiten",
+        "projects": "Projekte",
+        "education": "Bildung",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "badge": "VERFÜGBAR FÜR ARBEIT",
+        "title": "Tanvir Islam<br>Riyad",
+        "subtitle": "Frontend-Entwickler | Kreativer Programmierer | IT-Student",
+        "btn_explore": "Portfolio Erkunden",
+        "btn_contact": "Kontakt Aufnehmen"
+    },
+    "about": {
+        "label": "EINFÜHRUNG",
+        "title": "Über Mich",
+        "desc": "Hallo! Mein Name ist Riyad. Ich bin IT-Student und angehender Programmierer, der es liebt, kreative Web-Erlebnisse zu schaffen. Ich genieße es, Design mit Funktionalität zu verbinden und einfache Ideen in interaktive digitale Welten zu verwandeln.",
+        "card_focus": "Frontend-Entwicklung",
+        "card_focus_desc": "Arbeiten mit HTML, CSS und JavaScript, um schöne, funktionale Schnittstellen zu erstellen.",
+        "card_goal": "Professioneller Entwickler",
+        "card_goal_desc": "Anwendungen entwickeln, die reale Probleme lösen und großartige Benutzererfahrungen bieten."
+    },
+    "skills": {
+        "label": "EXPERTISE",
+        "title": "Fähigkeiten"
+    },
+    "projects": {
+        "label": "PORTFOLIO",
+        "title": "Projekte",
+        "view_github": "Auf GitHub Ansehen"
+    },
+    "education": {
+        "label": "HINTERGRUND",
+        "title": "Bildung",
+        "ssc": "SSC-Absolvent",
+        "diploma": "IT-Diplom",
+        "ongoing": "LAUFEND"
+    },
+    "contact": {
+        "label": "KONTAKT",
+        "title": "Kontaktieren Sie Mich",
+        "btn_send": "Nachricht Senden"
+    }
+}

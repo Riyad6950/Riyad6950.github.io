@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "关于",
+        "skills": "技能",
+        "projects": "项目",
+        "education": "教育",
+        "contact": "联系"
+    },
+    "hero": {
+        "badge": "可接受工作",
+        "title": "坦维尔·伊斯兰<br>里亚德",
+        "subtitle": "前端开发者 | 创意编码者 | IT学生",
+        "btn_explore": "探索作品集",
+        "btn_contact": "联系我"
+    },
+    "about": {
+        "label": "介绍",
+        "title": "关于我",
+        "desc": "你好！我的名字是里亚德。我是一名IT学生和有抱负的程序员，喜欢构建创意网络体验。我喜欢将设计与功能相结合，将简单的想法转化为互动的数字世界。",
+        "card_focus": "前端开发",
+        "card_focus_desc": "使用HTML、CSS和JavaScript创建美观、功能强大的界面。",
+        "card_goal": "专业开发者",
+        "card_goal_desc": "构建解决实际问题并提供出色用户体验的应用程序。"
+    },
+    "skills": {
+        "label": "专业知识",
+        "title": "技能"
+    },
+    "projects": {
+        "label": "作品集",
+        "title": "项目",
+        "view_github": "在GitHub上查看"
+    },
+    "education": {
+        "label": "背景",
+        "title": "教育",
+        "ssc": "SSC毕业生",
+        "diploma": "IT文凭",
+        "ongoing": "进行中"
+    },
+    "contact": {
+        "label": "联系",
+        "title": "联系我",
+        "btn_send": "发送消息"
+    }
+}

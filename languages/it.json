@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "Chi sono",
+        "skills": "Competenze",
+        "projects": "Progetti",
+        "education": "Istruzione",
+        "contact": "Contatti"
+    },
+    "hero": {
+        "badge": "DISPONIBILE PER LAVORO",
+        "title": "Tanvir Islam<br>Riyad",
+        "subtitle": "Sviluppatore Frontend | Programmatore Creativo | Studente IT",
+        "btn_explore": "Esplora Portfolio",
+        "btn_contact": "Mettiti in Contatto"
+    },
+    "about": {
+        "label": "INTRODUZIONE",
+        "title": "Chi Sono",
+        "desc": "Ciao! Mi chiamo Riyad. Sono uno studente di IT e programmatore aspirante che ama costruire esperienze web creative. Mi piace mescolare il design con la funzionalità e trasformare idee semplici in mondi digitali interattivi.",
+        "card_focus": "Sviluppo Frontend",
+        "card_focus_desc": "Lavorare con HTML, CSS e JavaScript per creare interfacce belle e funzionali.",
+        "card_goal": "Sviluppatore Professionale",
+        "card_goal_desc": "Costruire applicazioni che risolvono problemi del mondo reale e offrono grandi esperienze utente."
+    },
+    "skills": {
+        "label": "COMPETENZA",
+        "title": "Competenze"
+    },
+    "projects": {
+        "label": "PORTFOLIO",
+        "title": "Progetti",
+        "view_github": "Visualizza su GitHub"
+    },
+    "education": {
+        "label": "BACKGROUND",
+        "title": "Istruzione",
+        "ssc": "Diplomato SSC",
+        "diploma": "Diploma in IT",
+        "ongoing": "IN CORSO"
+    },
+    "contact": {
+        "label": "CONTATTO",
+        "title": "Contattami",
+        "btn_send": "Invia Messaggio"
+    }
+}

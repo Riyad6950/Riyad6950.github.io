@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "about": "Tentang",
+        "skills": "Keterampilan",
+        "projects": "Proyek",
+        "education": "Pendidikan",
+        "contact": "Kontak"
+    },
+    "hero": {
+        "badge": "TERSEDIA UNTUK BEKERJA",
+        "title": "Tanvir Islam<br>Riyad",
+        "subtitle": "Pengembang Frontend | Pembuat Kode Kreatif | Mahasiswa TI",
+        "btn_explore": "Jelajahi Portofolio",
+        "btn_contact": "Hubungi Kami"
+    },
+    "about": {
+        "label": "PENGANTAR",
+        "title": "Tentang Saya",
+        "desc": "Halo! Nama saya Riyad. Saya adalah mahasiswa TI dan calon programmer yang suka membangun pengalaman web kreatif. Saya senang menggabungkan desain dengan fungsionalitas dan mengubah ide sederhana menjadi dunia digital interaktif.",
+        "card_focus": "Pengembangan Frontend",
+        "card_focus_desc": "Bekerja dengan HTML, CSS, dan JavaScript untuk membuat antarmuka yang indah dan fungsional.",
+        "card_goal": "Pengembang Profesional",
+        "card_goal_desc": "Membangun aplikasi yang memecahkan masalah dunia nyata dan memberikan pengalaman pengguna yang luar biasa."
+    },
+    "skills": {
+        "label": "KEAHLIAN",
+        "title": "Keterampilan"
+    },
+    "projects": {
+        "label": "PORTOFOLIO",
+        "title": "Proyek",
+        "view_github": "Lihat di GitHub"
+    },
+    "education": {
+        "label": "LATAR BELAKANG",
+        "title": "Pendidikan",
+        "ssc": "Lulusan SSC",
+        "diploma": "Diploma TI",
+        "ongoing": "SEDANG BERJALAN"
+    },
+    "contact": {
+        "label": "HUBUNGI",
+        "title": "Hubungi Saya",
+        "btn_send": "Kirim Pesan"
+    }
+}
